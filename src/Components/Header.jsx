@@ -1,9 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Logo from './icons/Logo.jsx'
-import { Link } from 'react-router-dom'
-import { createApi } from 'unsplash-js'
+import { SearchContext } from '../context/searchContext.jsx'
 
 export const Header = () => {
+
+    const {  updateQuery } = useContext(SearchContext)
+    const  [query, setQuery] = useState("")
+
+    const handleInputChange = (e) => {
+
+        setQuery(e.target.value)
+    }
+
+    const handleSubmint = (e) => {
+        e.preventDefault()
+        updateQuery(query)
+    }
+
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -24,12 +37,12 @@ export const Header = () => {
                             <a className="nav-link" href="#">Crear</a>
                         </li>
                     </ul>
-                    <form className="d-flex ms-auto" role="search">
+                    <form className="d-flex ms-auto" role="search" onSubmit={handleSubmint}>
                         <div className="input-group">
                             <span className="input-group-text border-end-0" style={{borderTopLeftRadius: "15px", borderBottomLeftRadius: "15px"}}>
                                 <i className="fa-solid fa-magnifying-glass"></i>
                             </span>
-                            <input className="form-control border-start-0" type="search" placeholder="Search" aria-label="Search"  style={{borderTopRightRadius: "15px", borderBottomRightRadius: "15px"}}/>
+                            <input className="form-control border-start-0" type="search" placeholder="Search" aria-label="Search" onChange={handleInputChange} style={{borderTopRightRadius: "15px", borderBottomRightRadius: "15px"}}/>
                         </div>
                     </form>
                     <ul className="navbar-nav mb-2 mb-lg-0">

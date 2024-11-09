@@ -1,0 +1,79 @@
+.item div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.item .image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.item p {
+    margin-top: 2px;
+    margin-bottom: 3px;
+    font-weight: 500;
+    font-size: 14px;
+
+    overflow: hidden;
+    display: flexbox;
+}
+
+.item .user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.item div span{
+    color: #111111;
+    font-size: 14px;
+}
+
+.item div span:hover {
+    text-decoration: underline;
+}
+
+.item .image:hover > img  {
+    filter: brightness(65%);
+}
+
+.item .image {
+    position: relative;
+  }
+
+.item .image .btn-save {
+    background-color: #e60023;
+    color: #fff;
+    font-weight: 600;
+    padding: 13px 16px;
+    border-radius: 25px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    text-decoration: none;
+    display: none;
+}
+
+.item .image:hover .btn-save {
+    display: block;
+}
+
+.item .image .btn-save:hover {
+    background-color: #c3001e;
+}
+/* 
+.item .image .icon-upload,
+.item .image .icon-dots {
+  position: absolute;
+  width: 31px;
+  height: 31px;
+  bottom: 11px;
+  display: none;
+} */
+.item .image .icon-upload img:hover,
+.item .image .icon-dots img:hover{
+  filter: brightness(112%);
+}
