@@ -11,7 +11,7 @@ import { SearchContext } from './context/searchContext'
 function App() {
 
   const api = createApi({
-    accessKey: "YKhKzn5dPZjklb3ioIYmAA2UhCGvPeDp3F9B0AfZVRo"
+    accessKey: import.meta.env.VITE_ACCESSKEY
   })
 
   const { searchQuery } = useContext(SearchContext);
